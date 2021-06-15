@@ -21,7 +21,7 @@ This Project Builds a Data Lake ETL Pipeline using Spark and S3 for a music stre
     *   Storage service that holds log and song data JSON files
     *   Storage for Dimension and Fact table Parquet Files
 
-**How to Run **
+**How to Run**
 
 
 
@@ -49,7 +49,7 @@ This Project Builds a Data Lake ETL Pipeline using Spark and S3 for a music stre
 
 
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
 
 
 ![alt_text](Song_Data.png "image_tooltip")
@@ -63,7 +63,7 @@ This Project Builds a Data Lake ETL Pipeline using Spark and S3 for a music stre
 
 
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
 
 
 ![alt_text](Log_Data.png "image_tooltip")
@@ -139,21 +139,13 @@ This Project Builds a Data Lake ETL Pipeline using Spark and S3 for a music stre
 
            
 
-*   **Query: **
+*   **Query:**
 
-    Select t.weekday, count(s.songplay_id) as number_of_listens_each_day
-
-
-    From time t
-
-
-    JOIN songplay s  on (t.start_time = s.start_time)
-
-
-    Group by t.weekday
-
-
-    Order by number_of_listens_each_day DESC;
+               Select t.weekday, count(s.songplay_id) as number_of_listens_each_day
+               From time t
+               JOIN songplay s  on (t.start_time = s.start_time)
+               Group by t.weekday
+               Order by number_of_listens_each_day DESC;
 
 
 
