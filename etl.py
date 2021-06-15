@@ -67,7 +67,7 @@ def process_song_data(spark, input_data, output_data):
     date_time_taken = end_date - start_date
     
     print(f"------ song data reading complete in {time_taken} Seconds -------")
-    print(f"------ song data reading completed in {date_time_taken.minutes} minutes and {date_time_taken.seconds} seconds ----------")
+    
 
     # extract columns to create songs table
                                            
@@ -153,7 +153,7 @@ def process_log_data(spark, song_input_data, log_input_data, output_data):
     print("------- Done Writing User Table Parquet File -------")
     # create timestamp column from original timestamp column
     def format_timestamp(ts):
-        return datetime.fromtimestamp(ts / 1000.0)
+        return dt.fromtimestamp(ts / 1000.0)
                                            
     get_timestamp = udf(lambda x: format_timestamp(x), t.TimestampType())
     log_data_df = log_data_df.withColumn('timestamp', get_timestamp(log_data_df['ts']))
@@ -161,7 +161,7 @@ def process_log_data(spark, song_input_data, log_input_data, output_data):
     # create datetime column from original timestamp column
                                            
     def format_datetime(ts):
-        return datetime.fromtimestamp(ts / 1000.0).strftime('%Y-%m-%d %H:%M:%S')
+        return dt.fromtimestamp(ts / 1000.0).strftime('%Y-%m-%d %H:%M:%S')
                                            
     get_datetime = udf(lambda x: format_datetime(x), t.StringType())
                                            
