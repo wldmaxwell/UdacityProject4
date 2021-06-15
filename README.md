@@ -77,63 +77,25 @@ This Project Builds a Data Lake ETL Pipeline using Spark and S3 for a music stre
 
 *   **Query:** 
 
-        SELECT  (
-
-
+                SELECT  (
                 SELECT COUNT(*)
-
-
                 FROM   song_table
-
-
                 ) AS song_table_count,
-
-
                 (
-
-
                 SELECT COUNT(*)
-
-
                 FROM   artist_table
-
-
                 ) AS artist_table_count,
-
-
                 (
-
-
                 SELECT COUNT(*)
-
-
                 FROM user_table
-
-
                 ) AS user_table_count,
-
-
                 (
-
-
                 SELECT COUNT(*)
-
-
                 FROM   time_table
-
-
                 ) AS time_table_count,
-
-
                 (
-
-
                 SELECT COUNT(*)
-
-
                 FROM songplay_table
-
-
                 ) AS songplay_table_count
 
 
